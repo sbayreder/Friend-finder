@@ -1,19 +1,19 @@
 var express = require("express");
+var bodyParser = require("body-parser");
 var path = require("path");
+
 var app = express();
-require("dotenv").config();
+var port = process.env.PORT || 3000;
 
- require('./routing/apiRoutes')(app);
- require('./routing/htmlRoutes')(app);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(express.static('app/public'));
-//app.use('/api', apiRoutes);
-//app.use('/', htmlRoutes);
+app.use(express.static("app/public"));
 
-var PORT = process.env.PORT || 3000;
+require("./routing/apiRoutes")(app);
+require("./routing/htmlRoutes")(app);
 
-app.listen(PORT, function () {
-    console.log("Server listening on: http://localhost:" + PORT);
-});
+app.listen(port, () => console.log("Listening On Port %s", port));
+
