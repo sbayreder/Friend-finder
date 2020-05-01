@@ -12,7 +12,7 @@ JSON
 https://evening-garden-54667.herokuapp.com/
 
 Front End
-![Screen shot](./img/demo.gif)
+![Screen shot](./img/demo.gif);
 
 Back End
-![Screen shot](.img/demo2.gif)
+![Screen shot](.img/demo2.gif);
