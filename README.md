@@ -15,4 +15,4 @@ Front End
 ![Screen shot](./img/demo.gif);
 
 Back End
-![Screen shot](.img/demo2.gif);
+![Screen shot](./img/demo2.gif);
